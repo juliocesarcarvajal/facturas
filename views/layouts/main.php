@@ -39,8 +39,11 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
+            ['label' => 'Clientes', 'url' => ['/clientes/index'],'visible' => !Yii::$app->user->isGuest],
+            ['label' => 'Estratos', 'url' => ['/estratos/index'],'visible' => !Yii::$app->user->isGuest],
+            ['label' => 'Servicios', 'url' => ['/servicios/index'],'visible' => !Yii::$app->user->isGuest],
+            ['label' => 'Facturas', 'url' => ['/facturas/index'],'visible' => !Yii::$app->user->isGuest],
+            ['label' => 'Consolidados', 'url' => ['/consolidados/index'],'visible' => !Yii::$app->user->isGuest],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
             ) : (
