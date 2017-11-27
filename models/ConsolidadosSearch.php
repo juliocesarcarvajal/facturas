@@ -18,7 +18,7 @@ class ConsolidadosSearch extends Consolidados
     public function rules()
     {
         return [
-            [['id', 'cliente_id', 'factura_id'], 'integer'],
+            [['id', 'cliente_id'], 'integer'],
             [['cargo_fijo', 'cargo_variable'], 'number'],
         ];
     }
@@ -61,7 +61,6 @@ class ConsolidadosSearch extends Consolidados
         $query->andFilterWhere([
             'id' => $this->id,
             'cliente_id' => $this->cliente_id,
-            'factura_id' => $this->factura_id,
             'cargo_fijo' => $this->cargo_fijo,
             'cargo_variable' => $this->cargo_variable,
         ]);

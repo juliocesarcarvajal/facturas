@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use app\models\Servicios;
+use app\models\Clientes;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Facturas */
@@ -15,11 +17,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+        <?= Html::a('Actualizar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Borrar', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Estás seguro que deseas borrar esta fáctura?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -30,8 +32,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'fecha',
-            'servicio_id',
-            'cliente_id',
+            'servicio_id' => array('label' => 'Servicio', 'value' => Servicios::findOne($model->servicio_id)->nombre),
+            'cliente_id' => array('label' => 'Cliente', 'value' => Clientes::findOne($model->cliente_id)->nombres.' '.Clientes::findOne($model->cliente_id)->apellidos),
             'tiempo',
             'unidad_medida',
         ],

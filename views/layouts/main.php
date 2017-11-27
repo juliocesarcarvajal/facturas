@@ -38,7 +38,7 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
-            ['label' => 'Home', 'url' => ['/site/index']],
+            ['label' => 'Inicio', 'url' => ['/site/index']],
             ['label' => 'Clientes', 'url' => ['/clientes/index'],'visible' => !Yii::$app->user->isGuest],
             ['label' => 'Servicios', 'url' => ['/servicios/index'],'visible' => !Yii::$app->user->isGuest],
             ['label' => 'Facturas', 'url' => ['/facturas/index'],'visible' => !Yii::$app->user->isGuest],

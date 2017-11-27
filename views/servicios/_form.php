@@ -2,8 +2,6 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use yii\helpers\ArrayHelper;
-use app\models\Estratos;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Servicios */
@@ -14,16 +12,20 @@ use app\models\Estratos;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'nombre')->textInput() ?>
+    <?= $form->field($model, 'nombre')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'valor')->textInput() ?>
 
-    <?= $form->field($model, 'estrato_id')->dropDownList(
-      ArrayHelper::map(Estratos::find()->all(),'id','estrato'),['prompt'=>'Escoja un estrato']);
-    ?>
+    <?= $form->field($model, 'estrato')->dropDownList(
+      ['1' => 'Estrato 1',
+        '2' => 'Estrato 2',
+        '3' => 'Estrato 3',
+        '4' => 'Estrato 4',
+        '5' => 'Estrato 5',
+        '6' => 'Estrato 6'],['prompt'=>'Seleccione el estrato del servicio']); ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Crear' : 'Actualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

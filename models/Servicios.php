@@ -10,10 +10,9 @@ use Yii;
  * @property integer $id
  * @property string $nombre
  * @property double $valor
- * @property integer $estrato_id
+ * @property integer $estrato
  *
  * @property Facturas[] $facturas
- * @property Estratos $estrato
  */
 class Servicios extends \yii\db\ActiveRecord
 {
@@ -31,11 +30,10 @@ class Servicios extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nombre', 'estrato_id'], 'required'],
+            [['nombre', 'estrato'], 'required'],
             [['valor'], 'number'],
-            [['estrato_id'], 'integer'],
+            [['estrato'], 'integer'],
             [['nombre'], 'string', 'max' => 64],
-            [['estrato_id'], 'exist', 'skipOnError' => true, 'targetClass' => Estratos::className(), 'targetAttribute' => ['estrato_id' => 'id']],
         ];
     }
 
@@ -48,7 +46,7 @@ class Servicios extends \yii\db\ActiveRecord
             'id' => 'ID',
             'nombre' => 'Nombre',
             'valor' => 'Valor',
-            'estrato_id' => 'Estrato',
+            'estrato' => 'Estrato',
         ];
     }
 
@@ -58,13 +56,5 @@ class Servicios extends \yii\db\ActiveRecord
     public function getFacturas()
     {
         return $this->hasMany(Facturas::className(), ['servicio_id' => 'id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getEstrato()
-    {
-        return $this->hasOne(Estratos::className(), ['id' => 'estrato_id']);
     }
 }

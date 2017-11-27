@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Consolidados */
 
-$this->title = 'Create Consolidados';
+$this->title = 'Crear Consolidado';
 $this->params['breadcrumbs'][] = ['label' => 'Consolidados', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

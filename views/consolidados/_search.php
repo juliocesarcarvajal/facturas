@@ -19,8 +19,6 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'cliente_id') ?>
 
-    <?= $form->field($model, 'factura_id') ?>
-
     <?= $form->field($model, 'cargo_fijo') ?>
 
     <?= $form->field($model, 'cargo_variable') ?>

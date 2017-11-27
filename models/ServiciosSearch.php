@@ -18,7 +18,7 @@ class ServiciosSearch extends Servicios
     public function rules()
     {
         return [
-            [['id', 'estrato_id'], 'integer'],
+            [['id', 'estrato'], 'integer'],
             [['nombre'], 'safe'],
             [['valor'], 'number'],
         ];
@@ -62,7 +62,7 @@ class ServiciosSearch extends Servicios
         $query->andFilterWhere([
             'id' => $this->id,
             'valor' => $this->valor,
-            'estrato_id' => $this->estrato_id,
+            'estrato' => $this->estrato,
         ]);
 
         $query->andFilterWhere(['like', 'nombre', $this->nombre]);

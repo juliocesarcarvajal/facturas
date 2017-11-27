@@ -38,11 +38,9 @@ CREATE TABLE facturas (
 CREATE TABLE consolidados (
   id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
   cliente_id INTEGER NOT NULL,
-  factura_id INTEGER NOT NULL,
   cargo_fijo FLOAT (9,2) NOT NULL,
   cargo_variable FLOAT (9,2),
-  FOREIGN KEY (cliente_id) REFERENCES clientes(id) ON DELETE CASCADE,
-  FOREIGN KEY (factura_id) REFERENCES facturas(id) ON DELETE CASCADE
+  FOREIGN KEY (cliente_id) REFERENCES clientes(id) ON DELETE CASCADE
 );
 
 INSERT INTO `user` VALUES (1,'admin','4aae984230416ba76f98be2fd11e1aa71d90630a','julio.carvajal@outlook.com');

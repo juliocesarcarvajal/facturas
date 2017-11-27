@@ -52,8 +52,8 @@ class Facturas extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'fecha' => 'Fecha',
-            'servicio_id' => 'Servicio ID',
-            'cliente_id' => 'Cliente ID',
+            'servicio_id' => 'Servicio',
+            'cliente_id' => 'Cliente',
             'tiempo' => 'Tiempo',
             'unidad_medida' => 'Unidad Medida',
         ];
