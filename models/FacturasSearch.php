@@ -19,7 +19,8 @@ class FacturasSearch extends Facturas
     {
         return [
             [['id', 'servicio_id', 'cliente_id'], 'integer'],
-            [['fecha'], 'safe'],
+            [['fecha', 'unidad_medida'], 'safe'],
+            [['tiempo'], 'number'],
         ];
     }
 
@@ -63,7 +64,10 @@ class FacturasSearch extends Facturas
             'fecha' => $this->fecha,
             'servicio_id' => $this->servicio_id,
             'cliente_id' => $this->cliente_id,
+            'tiempo' => $this->tiempo,
         ]);
+
+        $query->andFilterWhere(['like', 'unidad_medida', $this->unidad_medida]);
 
         return $dataProvider;
     }

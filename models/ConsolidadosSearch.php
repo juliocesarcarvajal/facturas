@@ -19,6 +19,7 @@ class ConsolidadosSearch extends Consolidados
     {
         return [
             [['id', 'cliente_id', 'factura_id'], 'integer'],
+            [['cargo_fijo', 'cargo_variable'], 'number'],
         ];
     }
 
@@ -61,6 +62,8 @@ class ConsolidadosSearch extends Consolidados
             'id' => $this->id,
             'cliente_id' => $this->cliente_id,
             'factura_id' => $this->factura_id,
+            'cargo_fijo' => $this->cargo_fijo,
+            'cargo_variable' => $this->cargo_variable,
         ]);
 
         return $dataProvider;

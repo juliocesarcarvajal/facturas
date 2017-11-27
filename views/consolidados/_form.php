@@ -16,6 +16,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'factura_id')->textInput() ?>
 
+    <?= $form->field($model, 'cargo_fijo')->textInput() ?>
+
+    <?= $form->field($model, 'cargo_variable')->textInput() ?>
+
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>

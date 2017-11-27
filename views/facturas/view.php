@@ -32,6 +32,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'fecha',
             'servicio_id',
             'cliente_id',
+            'tiempo',
+            'unidad_medida',
         ],
     ]) ?>
 

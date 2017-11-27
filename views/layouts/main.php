@@ -29,7 +29,7 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => Yii::$app->name,
+        'brandLabel' => 'Facturación',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
@@ -40,7 +40,6 @@ AppAsset::register($this);
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
             ['label' => 'Clientes', 'url' => ['/clientes/index'],'visible' => !Yii::$app->user->isGuest],
-            ['label' => 'Estratos', 'url' => ['/estratos/index'],'visible' => !Yii::$app->user->isGuest],
             ['label' => 'Servicios', 'url' => ['/servicios/index'],'visible' => !Yii::$app->user->isGuest],
             ['label' => 'Facturas', 'url' => ['/facturas/index'],'visible' => !Yii::$app->user->isGuest],
             ['label' => 'Consolidados', 'url' => ['/consolidados/index'],'visible' => !Yii::$app->user->isGuest],
@@ -50,7 +49,7 @@ AppAsset::register($this);
                 '<li>'
                 . Html::beginForm(['/site/logout'], 'post')
                 . Html::submitButton(
-                    'Logout (' . Yii::$app->user->identity->username . ')',
+                    'Salir (' . Yii::$app->user->identity->username . ')',
                     ['class' => 'btn btn-link logout']
                 )
                 . Html::endForm()
@@ -72,9 +71,9 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+        <p class="pull-left">&copy; Desarrollo Web Proyecto Final <?= date('Y') ?></p>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
+        <!--p class="pull-right"><?= Yii::powered() ?></p-->
     </div>
 </footer>
 

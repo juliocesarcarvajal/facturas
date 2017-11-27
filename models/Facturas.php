@@ -11,6 +11,8 @@ use Yii;
  * @property string $fecha
  * @property integer $servicio_id
  * @property integer $cliente_id
+ * @property double $tiempo
+ * @property string $unidad_medida
  *
  * @property Consolidados[] $consolidados
  * @property Servicios $servicio
@@ -35,6 +37,8 @@ class Facturas extends \yii\db\ActiveRecord
             [['fecha'], 'safe'],
             [['servicio_id', 'cliente_id'], 'required'],
             [['servicio_id', 'cliente_id'], 'integer'],
+            [['tiempo'], 'number'],
+            [['unidad_medida'], 'string', 'max' => 10],
             [['servicio_id'], 'exist', 'skipOnError' => true, 'targetClass' => Servicios::className(), 'targetAttribute' => ['servicio_id' => 'id']],
             [['cliente_id'], 'exist', 'skipOnError' => true, 'targetClass' => Clientes::className(), 'targetAttribute' => ['cliente_id' => 'id']],
         ];
@@ -50,6 +54,8 @@ class Facturas extends \yii\db\ActiveRecord
             'fecha' => 'Fecha',
             'servicio_id' => 'Servicio ID',
             'cliente_id' => 'Cliente ID',
+            'tiempo' => 'Tiempo',
+            'unidad_medida' => 'Unidad Medida',
         ];
     }
 

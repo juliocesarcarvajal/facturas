@@ -21,6 +21,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'factura_id') ?>
 
+    <?= $form->field($model, 'cargo_fijo') ?>
+
+    <?= $form->field($model, 'cargo_variable') ?>
+
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
         <?= Html::resetButton('Reset', ['class' => 'btn btn-default']) ?>

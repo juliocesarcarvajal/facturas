@@ -5,23 +5,11 @@ CREATE TABLE user (
     email VARCHAR(128) NOT NULL
 );
 
-CREATE TABLE estratos (
-  id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  estrato INTEGER NOT NULL
-);
-
-CREATE TABLE valores (
-  id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  valor FLOAT (9,2),
-  estrato_id INTEGER NOT NULL,
-  FOREIGN KEY (estrato_id) REFERENCES estratos(id) ON DELETE CASCADE
-);
-
 CREATE TABLE servicios (
   id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
   nombre VARCHAR(64) NOT NULL,
-  valor_id INTEGER NOT NULL,
-  FOREIGN KEY (valor_id) REFERENCES valores(id) ON DELETE CASCADE
+  valor FLOAT (9,2),
+  estrato INTEGER NOT NULL
 );
 
 CREATE TABLE clientes (
@@ -41,6 +29,8 @@ CREATE TABLE facturas (
   fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
   servicio_id INTEGER NOT NULL,
   cliente_id INTEGER NOT NULL,
+  tiempo FLOAT (5,2),
+  unidad_medida VARCHAR (10),
   FOREIGN KEY (servicio_id) REFERENCES servicios(id) ON DELETE CASCADE,
   FOREIGN KEY (cliente_id) REFERENCES clientes(id) ON DELETE CASCADE
 );
@@ -49,6 +39,8 @@ CREATE TABLE consolidados (
   id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
   cliente_id INTEGER NOT NULL,
   factura_id INTEGER NOT NULL,
+  cargo_fijo FLOAT (9,2) NOT NULL,
+  cargo_variable FLOAT (9,2),
   FOREIGN KEY (cliente_id) REFERENCES clientes(id) ON DELETE CASCADE,
   FOREIGN KEY (factura_id) REFERENCES facturas(id) ON DELETE CASCADE
 );

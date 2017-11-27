@@ -48,7 +48,7 @@ class Servicios extends \yii\db\ActiveRecord
             'id' => 'ID',
             'nombre' => 'Nombre',
             'valor' => 'Valor',
-            'estrato_id' => 'Estrato ID',
+            'estrato_id' => 'Estrato',
         ];
     }
 
