@@ -18,7 +18,7 @@ class ClientesSearch extends Clientes
     public function rules()
     {
         return [
-            [['id'], 'integer'],
+            [['id', 'estrato'], 'integer'],
             [['nombres', 'apellidos', 'cedula', 'telefono', 'direccion', 'sexo', 'email'], 'safe'],
         ];
     }
@@ -68,7 +68,8 @@ class ClientesSearch extends Clientes
             ->andFilterWhere(['like', 'telefono', $this->telefono])
             ->andFilterWhere(['like', 'direccion', $this->direccion])
             ->andFilterWhere(['like', 'sexo', $this->sexo])
-            ->andFilterWhere(['like', 'email', $this->email]);
+            ->andFilterWhere(['like', 'email', $this->email])
+            ->andFilterWhere(['like', 'estrato', $this->estrato]);
 
         return $dataProvider;
     }

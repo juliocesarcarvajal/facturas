@@ -54,4 +54,6 @@ CREATE TABLE consolidados (
   FOREIGN KEY (cliente_id) REFERENCES clientes(id) ON DELETE CASCADE
 );
 
+ALTER TABLE clientes ADD estrato INTEGER NOT NULL AFTER email;
+
 INSERT INTO `user` VALUES (1,'admin','4aae984230416ba76f98be2fd11e1aa71d90630a','julio.carvajal@outlook.com');

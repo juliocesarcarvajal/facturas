@@ -26,6 +26,14 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'estrato')->dropDownList(
+      ['1' => 'Estrato 1',
+        '2' => 'Estrato 2',
+        '3' => 'Estrato 3',
+        '4' => 'Estrato 4',
+        '5' => 'Estrato 5',
+        '6' => 'Estrato 6'],['prompt'=>'Seleccione el estrato del cliente']); ?>
+
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Crear' : 'Actualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>

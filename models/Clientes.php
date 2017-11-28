@@ -35,11 +35,12 @@ class Clientes extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nombres', 'apellidos', 'cedula', 'telefono', 'direccion', 'sexo', 'email'], 'required'],
+            [['nombres', 'apellidos', 'cedula', 'telefono', 'direccion', 'sexo', 'email', 'estrato'], 'required'],
             [['nombres', 'apellidos'], 'string', 'max' => 64],
             [['cedula', 'telefono', 'direccion'], 'string', 'max' => 32],
             [['sexo'], 'string', 'max' => 16],
             [['email'], 'string', 'max' => 128],
+            [['estrato'], 'integer'],
             [['cedula'], 'unique'],
         ];
     }
@@ -58,6 +59,7 @@ class Clientes extends \yii\db\ActiveRecord
             'direccion' => 'Direccion',
             'sexo' => 'Sexo',
             'email' => 'Email',
+            'estrato' => 'Estrato',
         ];
     }
 

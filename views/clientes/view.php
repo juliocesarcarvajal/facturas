@@ -36,6 +36,7 @@ $this->params['breadcrumbs'][] = $model->nombres.' '.$model->apellidos;
             'direccion',
             'sexo',
             'email:email',
+            'estrato',
         ],
     ]) ?>
 
