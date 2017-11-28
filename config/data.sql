@@ -38,8 +38,19 @@ CREATE TABLE facturas (
 CREATE TABLE consolidados (
   id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
   cliente_id INTEGER NOT NULL,
-  cargo_fijo FLOAT (9,2) NOT NULL,
+  cargo_basico FLOAT (9,2) NOT NULL,
   cargo_variable FLOAT (9,2),
+  estrato INTEGER NOT NULL,
+  numero_horas INTEGER,
+  valor_hora FLOAT (9,2),
+  sub_total_horas FLOAT (9,2),
+  numero_minutos INTEGER,
+  valor_minuto FLOAT (9,2),
+  sub_total_minutos FLOAT (9,2),
+  numero_kb INTEGER,
+  valor_kb FLOAT (9,2),
+  sub_total_kb FLOAT (9,2),
+  total FLOAT (9,2),
   FOREIGN KEY (cliente_id) REFERENCES clientes(id) ON DELETE CASCADE
 );
 
